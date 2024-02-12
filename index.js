@@ -10,6 +10,8 @@ const port = process.env.PORT ||8500
 //middleware
 app.use(cors())
 app.use(express.json())
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoSanitize());
 app.use(express.static('uploads'))
 app.get('/', (req,res)=>{
